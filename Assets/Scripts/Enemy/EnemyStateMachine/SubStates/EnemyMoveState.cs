@@ -49,8 +49,12 @@ public class EnemyMoveState : EnemyState
         else if(!playerInDetectedRange && playerInMaxAgroRange) {
             // Remain at move state
             //Debug.Log("MoveState");
-            Debug.Log("Player Position: "+ enemy.GetPlayerPosition());
+            // Debug.Log("Player Position: "+ enemy.GetPlayerPosition());
             enemy.SetVelocity(enemy.facingDirection, enemyData.moveSpeed);
+            //enemy.MoveToPlayer();
+        }
+        else if(playerInDetectedRange && playerInCloseRange) {
+            enemy.SetVelocity(enemy.facingDirection, -enemyData.moveSpeed);
         }
     }
 }

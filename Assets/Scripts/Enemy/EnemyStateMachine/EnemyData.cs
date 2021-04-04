@@ -9,6 +9,7 @@ public class EnemyData : ScriptableObject
     public int maxHealth = 10;
     public int baseDamage = 1;
     public float moveSpeed = 5f;
+    public bool moveWhileAttack;
     
 
 

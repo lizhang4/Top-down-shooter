@@ -45,6 +45,7 @@
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\Swords\NormalSword.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Wands\NormalWand.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerMoveState.cs" />
+     <Compile Include="Assets\Scripts\Attacks\Skill.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyPlayerDetectedState.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyAttack1State.cs" />
      <Compile Include="Assets\Scripts\Abilities\Ability.cs" />
@@ -70,19 +71,23 @@
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Wands\IceWand.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\EnemyData.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
+     <Compile Include="Assets\Scripts\Attacks\Skills\FireWandSpell.cs" />
      <Compile Include="Assets\Scripts\Items\Item.cs" />
      <Compile Include="Assets\Scripts\OtherScripts\AttackDetails.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack\EnemyRangeAttack.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\Swords\ThunderSword.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
+     <Compile Include="Assets\Scripts\Attacks\SkillSO.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
      <Compile Include="Assets\Scripts\ObjectScripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerSpellState.cs" />
+     <Compile Include="Assets\Scripts\Attacks\Skills\IceWandSpell.cs" />
      <Compile Include="Assets\Scripts\Abilities\DashAbility.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyIdleState.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\EnemyStateMachine.cs" />
+     <Compile Include="Assets\Scripts\Attacks\Skills\FireBall01.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\SpawnRooms.cs" />
      <Compile Include="Assets\Scripts\ObjectScripts\EffectTrigger.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\LevelGeneration.cs" />
@@ -95,11 +100,6 @@
      <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack\EnemyAttackTrigger.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\Swords\IceSword.cs" />
-     <Compile Include="Assets\Scripts\Attacks\Skill.cs" />
-     <Compile Include="Assets\Scripts\Attacks\SkillSO.cs" />
-     <Compile Include="Assets\Scripts\Attacks\Skills\FireWandSpell.cs" />
-     <Compile Include="Assets\Scripts\Attacks\Skills\FireBall01.cs" />
-     <Compile Include="Assets\Scripts\Attacks\Skills\IceWandSpell.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -720,6 +720,18 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VectorGraphics">
+        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.VectorGraphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.003">
+        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.003.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VectorGraphics.Editor">
+        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.VectorGraphics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.003">
+        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.003.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

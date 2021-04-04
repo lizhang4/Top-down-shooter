@@ -75,6 +75,14 @@ public class Enemy : MonoBehaviour
     public virtual void SetVelocityZero() {
         rb.velocity = Vector2.zero;
     }
+
+    public virtual void MoveToPlayer() {
+        rb.position = Vector2.MoveTowards(transform.position, GetPlayerPosition(), enemyData.moveSpeed * Time.deltaTime);
+    }
+
+    public virtual void MoveAwayFromPlayer() {
+        rb.position = Vector2.MoveTowards(transform.position, GetPlayerPosition(), -enemyData.moveSpeed * Time.deltaTime);
+    }
     
 
     #endregion

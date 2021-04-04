@@ -41,23 +41,28 @@ public class EnemyPlayerDetectedState : EnemyState
         // if in detected range and close range: attack2 melee
         if  (!playerInDetectedRange && !playerInMaxAgroRange) {
             // Change state to idle state
-            Debug.Log("IdleState");
+            //Debug.Log("IdleState");
             enemy.StateMachine.ChangeState(enemy.IdleState);
         }
         else if(!playerInDetectedRange && playerInMaxAgroRange) {
             // Change to move state
-            Debug.Log("MoveState");
+            //Debug.Log("MoveState");
             enemy.StateMachine.ChangeState(enemy.MoveState);
         }
         else if(playerInDetectedRange && !playerInCloseRange) {
             // change to attack1 state
-            Debug.Log("Attack1, range attack");
+            //Debug.Log("Attack1, range attack");
             enemy.StateMachine.ChangeState(enemy.Attack1State);
         }
         else if(playerInDetectedRange && playerInCloseRange) {
             // change to attack2 state
-            Debug.Log("Attack2, melee attack");
-            enemy.StateMachine.ChangeState(enemy.Attack2State);
+            //Debug.Log("Attack2, melee attack");
+            Debug.Log("Retreat");
+            enemy.SetVelocity(enemy.facingDirection, -enemyData.moveSpeed);
+
+            //enemy.StateMachine.ChangeState(enemy.MoveState);
+
+            //enemy.StateMachine.ChangeState(enemy.Attack2State);
         }
     }
 }

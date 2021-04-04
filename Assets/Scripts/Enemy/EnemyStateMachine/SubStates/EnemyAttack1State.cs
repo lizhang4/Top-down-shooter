@@ -25,7 +25,7 @@ public class EnemyAttack1State : EnemyAttackState
 
         if(playerInDetectedRange && !playerInCloseRange) {
             // change to attack1 state
-            Debug.Log("Attack1, attacking");
+            //Debug.Log("Attack1, attacking");
             //Debug.Log("Player Position: "+ enemy.GetPlayerPosition());
             //enemy.facingDirection = enemy.GetPlayerPosition() - (Vector2)enemy.transform.position;
             if (lastAttackTime + 1/enemy.enemyAttack[0].attackRate < Time.time) {
@@ -46,8 +46,9 @@ public class EnemyAttack1State : EnemyAttackState
         
         else if(playerInDetectedRange && playerInCloseRange) {
             // change to attack2 state
-            Debug.Log("Attack2, melee attack");
-            enemy.StateMachine.ChangeState(enemy.Attack2State);
+            Debug.Log("Retreat");
+            enemy.MoveAwayFromPlayer();
+
         }
     }
 }
