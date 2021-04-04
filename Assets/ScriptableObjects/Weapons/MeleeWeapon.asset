@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73716e685b13cdf47a786c634de87db2, type: 3}
+  m_Name: MeleeWeapon
+  m_EditorClassIdentifier: 
+  attackDamage: 5
+  attackRate: 1
+  whatIsDamagable:
+    serializedVersion: 2
+    m_Bits: 512
+  attackEffect:
+  - {fileID: 6479597867679958079, guid: 44ea04eaa80370c4b848b569aa38efea, type: 3}
+  attackRadius: 2

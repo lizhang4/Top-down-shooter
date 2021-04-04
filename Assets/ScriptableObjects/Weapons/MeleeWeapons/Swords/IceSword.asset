@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be44419f9b040334bab2eb82cea27ba9, type: 3}
+  m_Name: IceSword
+  m_EditorClassIdentifier: 
+  attackDamage: 1
+  spellDamage: 5
+  attackRate: 1
+  attackCooldown: 0
+  spellCooldown: 0
+  whatIsDamagable:
+    serializedVersion: 2
+    m_Bits: 512
+  attackEffect:
+  - {fileID: 6479597867679958079, guid: 44ea04eaa80370c4b848b569aa38efea, type: 3}
+  spellEffect:
+  - {fileID: 0}
+  attackRadius: 3
+  spellRadius: 0
+  chargeDamageMultiplier: 3
+  spellDuration: 2

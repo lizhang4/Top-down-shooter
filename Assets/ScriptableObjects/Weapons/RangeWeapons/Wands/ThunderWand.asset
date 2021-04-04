@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e00fe280ac8ace498f95e6c9e87e953, type: 3}
+  m_Name: ThunderWand
+  m_EditorClassIdentifier: 
+  attackDamage: 1
+  spellDamage: 5
+  attackRate: 5
+  attackCooldown: 0
+  spellCooldown: 1
+  whatIsDamagable:
+    serializedVersion: 2
+    m_Bits: 512
+  attackEffect:
+  - {fileID: 0}
+  spellEffect:
+  - {fileID: 2077451374766598476, guid: 742cecc017e71de458f4704e513d6c0d, type: 3}
+  projectileSpeed: 25
+  projectile: {fileID: 1320809660060716114, guid: be31eaf58ad2c494fa8f4bbe2cd89000, type: 3}
+  spellRadius: 5
+  offsetDistance: 3
+  teleportMaxDistance: 5
