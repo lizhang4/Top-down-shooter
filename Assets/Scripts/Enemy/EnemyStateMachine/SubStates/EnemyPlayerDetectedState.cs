@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyPlayerDetectedState : EnemyState
-{
-    private bool playerInDetectedRange;
-    private bool playerInMaxAgroRange;
-    private bool playerInCloseRange;
-
-    
+{   
     public EnemyPlayerDetectedState(Enemy enemy, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(enemy, stateMachine, enemyData, animBoolName)
     {
     }
@@ -17,9 +12,7 @@ public class EnemyPlayerDetectedState : EnemyState
     {
         base.DoChecks();
 
-        playerInDetectedRange = enemy.CheckPlayerInDetectedRange();
-        playerInMaxAgroRange = enemy.CheckPlayerInMaxAgroRange();
-        playerInCloseRange = enemy.CheckPlayerInCloseRange();
+        
     }
 
     public override void Enter()

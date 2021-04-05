@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   baseDamage: 1
-  moveSpeed: 10
+  moveSpeed: 5
   moveWhileAttack: 0
   hitParticle: {fileID: 0}
-  playerDetectedRadius: 10
-  maxAgroRadius: 15
-  closeRangeActionRadius: 4
+  playerDetectedRadius: 7
+  maxAgroRadius: 10
+  closeRangeActionRadius: 2
+  midRangeActionRadius: 0
+  retreatRangeRadius: 0
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 256

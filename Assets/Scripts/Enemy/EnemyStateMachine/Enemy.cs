@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public EnemyLookingForPlayerState LookingForPlayerState {get; private set;}
     public EnemyAttack1State Attack1State {get; private set;}
     public EnemyAttack2State Attack2State {get ; private set;}
+    public EnemyPatrolState PatrolState {get ; private set; }
 
 
     #endregion
@@ -31,6 +32,14 @@ public class Enemy : MonoBehaviour
     private Vector2 velocityWorkspace;
     protected bool isDead;
 
+
+
+    public E_IdleSO idleSO;
+    public E_MoveSO moveSO;
+    public E_AttackSO attackSO;
+    public E_PatrolSO patrolSO;
+
+
     private void Awake() {
         StateMachine = new EnemyStateMachine();
 
@@ -40,6 +49,7 @@ public class Enemy : MonoBehaviour
         LookingForPlayerState = new EnemyLookingForPlayerState(this, StateMachine, enemyData, "LookForPlayer");
         Attack1State = new EnemyAttack1State(this, StateMachine, enemyData, "Attack1");
         Attack2State = new EnemyAttack2State(this, StateMachine, enemyData, "Attack2");
+        PatrolState = new EnemyPatrolState(this, StateMachine, enemyData, "Patrol");
 
     }
 
@@ -49,11 +59,14 @@ public class Enemy : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         enemyStats = GetComponent<EnemyStats>();
+
+        attackSO.InitializeLastAttackTime();
         StateMachine.Initialize(this.IdleState);
 
     }
 
     public virtual void Update() {
+        //if(facingDirection != Vector2.zero) {}
         facingDirection = GetPlayerPosition() - (Vector2)transform.position;
         facingDirection.Normalize();
         facingAngle = Vector2.SignedAngle(Vector2.up, facingDirection);
@@ -106,6 +119,14 @@ public class Enemy : MonoBehaviour
         return Physics2D.OverlapCircle(transform.position, enemyData.closeRangeActionRadius, enemyData.whatIsPlayer);
     }
 
+    public virtual bool CheckPlayerInMidRange() {
+        return Physics2D.OverlapCircle(transform.position, enemyData.midRangeActionRadius, enemyData.whatIsPlayer);
+    }
+
+    public virtual bool CheckPlayerInRetreatRange() {
+        return Physics2D.OverlapCircle(transform.position, enemyData.retreatRangeRadius, enemyData.whatIsPlayer);
+    }
+
     #endregion
 
     #region GetFunctions 
@@ -146,8 +167,15 @@ public class Enemy : MonoBehaviour
     #endregion
 
     public virtual void OnDrawGizmos() {
-        Gizmos.DrawWireSphere(transform.position, enemyData.playerDetectedRadius);
+        Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, enemyData.maxAgroRadius);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, enemyData.playerDetectedRadius);
+        Gizmos.DrawWireSphere(transform.position, enemyData.midRangeActionRadius);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, enemyData.retreatRangeRadius);
         Gizmos.DrawWireSphere(transform.position, enemyData.closeRangeActionRadius);
 
         Gizmos.color = Color.yellow;

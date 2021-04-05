@@ -100,6 +100,22 @@
      <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack\EnemyAttackTrigger.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\Swords\IceSword.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyPatrolState.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyStateSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E1_AttackSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyMoveSO\E1_MoveSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyPatrolSO\E1_PatrolSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyPatrolSO\E_PatrolSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyMoveSO\E_MoveSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E_AttackSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyIdleSO\E_IdleSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyIdleSO\E1_IdleSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyPatrolSO\E2_PatrolSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyMoveSO\E2_MoveSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E2_AttackSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyIdleSO\E3_IdleSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E3_AttackSO.cs" />
+     <Compile Include="Assets\Scripts\ObjectScripts\Laser.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -649,8 +665,14 @@
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VectorGraphics">
+        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.VectorGraphics.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.003">
+        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.003.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -672,6 +694,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VectorGraphics.Editor">
+        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.VectorGraphics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
@@ -706,6 +731,9 @@
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.003">
+        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.003.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
@@ -720,18 +748,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VectorGraphics">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.VectorGraphics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.003">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.003.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VectorGraphics.Editor">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.VectorGraphics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEngineBridge.003">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.003.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

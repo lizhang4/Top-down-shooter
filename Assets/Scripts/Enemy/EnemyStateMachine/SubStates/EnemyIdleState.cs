@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyState
 {
-    private bool playerInDetectedRange;
     public EnemyIdleState(Enemy enemy, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(enemy, stateMachine, enemyData, animBoolName)
     {
     }
@@ -12,26 +11,26 @@ public class EnemyIdleState : EnemyState
     public override void DoChecks()
     {
         base.DoChecks();
-
-        playerInDetectedRange = enemy.CheckPlayerInDetectedRange();
     }
 
     public override void Enter()
     {
         base.Enter();
+        enemy.idleSO.StateEnter(enemy, this);
+
     }
 
 
     public override void Exit()
     {
         base.Exit();
+        enemy.idleSO.StateExit(enemy, this);
+
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (playerInDetectedRange) {
-            enemy.StateMachine.ChangeState(enemy.PlayerDetectedState);
-        }
+        enemy.idleSO.StateUpdate(enemy, this);
     }
 }

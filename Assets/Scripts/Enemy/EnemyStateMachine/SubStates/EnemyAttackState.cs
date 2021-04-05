@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyState
 {
-    protected bool playerInDetectedRange;
-    protected bool playerInMaxAgroRange;
-    protected bool playerInCloseRange;
-
     protected bool hasAbilityDone;
 
     protected float minExitTime = 2f;
@@ -18,9 +14,6 @@ public class EnemyAttackState : EnemyState
     public override void DoChecks()
     {
         base.DoChecks();
-        playerInDetectedRange = enemy.CheckPlayerInDetectedRange();
-        playerInMaxAgroRange = enemy.CheckPlayerInMaxAgroRange();
-        playerInCloseRange = enemy.CheckPlayerInCloseRange();
     }
 
     public override void Enter()

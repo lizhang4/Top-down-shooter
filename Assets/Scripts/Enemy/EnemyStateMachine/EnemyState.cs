@@ -14,6 +14,12 @@ public class EnemyState
     protected bool isAnimationFinish;
     protected bool triggerEffect;
 
+    public bool playerInDetectedRange {get; protected set;}
+    public bool playerInMaxAgroRange {get; protected set;}
+    public bool playerInCloseRange {get; protected set;}
+    public bool playerInMidRange {get; protected set;}
+    public bool PlayerInRetreatRange {get; protected set;}
+
     public EnemyState(Enemy enemy, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) {
         this.enemy = enemy;
         this.stateMachine = stateMachine;
@@ -44,7 +50,12 @@ public class EnemyState
     }
 
     public virtual void DoChecks() {
-        
+        playerInDetectedRange = enemy.CheckPlayerInDetectedRange();
+        playerInMaxAgroRange = enemy.CheckPlayerInMaxAgroRange();
+        playerInCloseRange = enemy.CheckPlayerInCloseRange();
+        playerInMidRange = enemy.CheckPlayerInMidRange();
+        PlayerInRetreatRange = enemy.CheckPlayerInRetreatRange();
+
     }
 
     public virtual void AnimationTrigger() {
