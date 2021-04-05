@@ -5,10 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "E2_Attack", menuName = "Assets/EnemyStates/E2_Attack")]
 public class E2_AttackSO : E_AttackSO
 {
+    
+    private Vector2 attackDirection;
     public override void StateEnter(Enemy enemy, EnemyAttackState enemyAttackState)
     {
         base.StateEnter(enemy, enemyAttackState);
         enemy.SetVelocityZero();
+        attackDetails.damageAmount = enemy.enemyData.baseDamage;
+        attackDirection = enemy.facingDirection;
 
     }
 
@@ -26,8 +30,18 @@ public class E2_AttackSO : E_AttackSO
         if(enemyAttackState.playerInCloseRange) {
             enemy.SetVelocityZero();
             if(lastAttackTime + attackCooldown <= Time.time){
-                lastAttackTime = Time.time;
-                Debug.Log("Attack");
+                if(attackAnticipationDuration + enemyAttackState.startTime <= Time.time) {
+                    lastAttackTime = Time.time;
+
+                    Collider2D playerHit = Physics2D.OverlapCircle(enemy.attackPoint.position, enemy.enemyData.attackRadius, enemy.enemyData.whatIsPlayer);
+
+                    //enemy.SetVelocity()
+                    if(playerHit) {
+                        playerHit.SendMessage("Damage", attackDetails);
+                    }
+                    Debug.Log("Attack");
+
+                }
 
             }
         }

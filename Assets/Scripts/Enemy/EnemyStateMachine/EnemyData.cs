@@ -12,6 +12,7 @@ public class EnemyData : ScriptableObject
     public GameObject projectile;
     public bool moveWhileAttack;
     
+    
 
 
     public GameObject hitParticle;
@@ -26,6 +27,8 @@ public class EnemyData : ScriptableObject
 
 
     [Header("Attacks")]
+    public float attackRadius = 2f;
+
 
     [Header("Layer Masks")]
     public LayerMask whatIsPlayer;

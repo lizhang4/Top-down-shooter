@@ -66,11 +66,12 @@ public class Enemy : MonoBehaviour
     }
 
     public virtual void Update() {
-        //if(facingDirection != Vector2.zero) {}
-        facingDirection = GetPlayerPosition() - (Vector2)transform.position;
-        facingDirection.Normalize();
-        facingAngle = Vector2.SignedAngle(Vector2.up, facingDirection);
-        transform.rotation = Quaternion.Euler(0,0,facingAngle);
+        if( GetPlayerPosition() != (Vector2)transform.position) {
+            facingDirection = GetPlayerPosition() - (Vector2)transform.position;
+            facingDirection.Normalize();
+            facingAngle = Vector2.SignedAngle(Vector2.up, facingDirection);
+            transform.rotation = Quaternion.Euler(0,0,facingAngle);
+        }
 
         StateMachine.currentState.LogicUpdate();
         

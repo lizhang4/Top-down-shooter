@@ -14,6 +14,8 @@ public class E1_IdleSO : E_IdleSO
     public override void StateEnter(Enemy enemy, EnemyIdleState enemyIdleState)
     {
         base.StateEnter(enemy, enemyIdleState);
+
+        enemy.StateMachine.ChangeState(enemy.PatrolState);
     }
 
     public override void StateUpdate(Enemy enemy, EnemyIdleState enemyIdleState)
