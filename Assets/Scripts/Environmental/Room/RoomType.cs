@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class RoomType : MonoBehaviour
 {
-    public int type;
+    // public int opening;
+    // public int type;
 
-    public void RoomDestruction() {
-        Destroy(gameObject);
-    }
+    // public bool firstRoom;
+    // public bool lastRoom;
+
+    // public void RoomDestruction() {
+    //     Destroy(gameObject);
+    // }
+
+    public float[] topDoorRotation;
+    public float[] leftDoorRotation;
+    public float[] bottomDoorRotation;
+    public float[] rightDoorRotation;
+
 }
