@@ -46,12 +46,13 @@ public class RoomSpawner : MonoBehaviour
                     rand = Random.Range(0,2);
                 }
                 else {
-                    rand = Random.Range(0, templates.rooms.Length);
+                    rand = Random.Range(0, 4);
                 }
-
-                int randRotation = Random.Range(0, templates.rooms[rand].GetComponent<RoomType>().bottomDoorRotation.Length);
-                float bottomRotation = templates.rooms[rand].GetComponent<RoomType>().bottomDoorRotation[randRotation] + transform.parent.parent.eulerAngles.z;
-                GameObject tempObj = Instantiate(templates.rooms[rand], transform.position, Quaternion.Euler(0,0, bottomRotation));
+                //Debug.Log(templates.bottomRooms[rand].transform.eulerAngles);
+                //int randRotation = Random.Range(0, templates.rooms[rand].GetComponent<RoomType>().bottomDoorRotation.Length);
+                float bottomRotation = templates.bottomRooms[rand].transform.eulerAngles.z;
+                
+                GameObject tempObj = Instantiate(templates.bottomRooms[rand], transform.position, Quaternion.Euler(0,0,bottomRotation));
                 RoomSpawner[] roomSpawnerComponents = tempObj.GetComponentsInChildren<RoomSpawner>();
 
                 foreach (RoomSpawner roomSpawnerComponent in roomSpawnerComponents) {
@@ -69,14 +70,12 @@ public class RoomSpawner : MonoBehaviour
                     rand = Random.Range(0,2);
                 }
                 else {
-                    rand = Random.Range(0, templates.rooms.Length);
+                    rand = Random.Range(0, 4);
 
                 }
                 
-                int randRotation = Random.Range(0, templates.rooms[rand].GetComponent<RoomType>().leftDoorRotation.Length);
-                float leftRotation = templates.rooms[rand].GetComponent<RoomType>().leftDoorRotation[randRotation] + transform.parent.parent.eulerAngles.z;
-
-                GameObject tempObj = Instantiate(templates.rooms[rand], transform.position, Quaternion.Euler(0,0,leftRotation));
+                float leftRotation = templates.leftRooms[rand].transform.eulerAngles.z;
+                GameObject tempObj = Instantiate(templates.leftRooms[rand], transform.position, Quaternion.Euler(0,0,leftRotation));
                 RoomSpawner[] roomSpawnerComponents = tempObj.GetComponentsInChildren<RoomSpawner>();
 
                 foreach (RoomSpawner roomSpawnerComponent in roomSpawnerComponents) {
@@ -97,14 +96,12 @@ public class RoomSpawner : MonoBehaviour
                     rand = Random.Range(0,2);
                 }
                 else {
-                    rand = Random.Range(0, templates.rooms.Length);
+                    rand = Random.Range(0, 4);
                 }
 
                 
-                int randRotation = Random.Range(0, templates.rooms[rand].GetComponent<RoomType>().topDoorRotation.Length);
-                float topRotation = templates.rooms[rand].GetComponent<RoomType>().topDoorRotation[randRotation] + transform.parent.parent.eulerAngles.z;
-
-                GameObject tempObj = Instantiate(templates.rooms[rand], transform.position, Quaternion.Euler(0,0,topRotation));
+                float topRotation = templates.topRooms[rand].transform.eulerAngles.z;
+                GameObject tempObj = Instantiate(templates.topRooms[rand], transform.position, Quaternion.Euler(0,0,topRotation));
                 RoomSpawner[] roomSpawnerComponents = tempObj.GetComponentsInChildren<RoomSpawner>();
 
                 foreach (RoomSpawner roomSpawnerComponent in roomSpawnerComponents) {
@@ -125,15 +122,13 @@ public class RoomSpawner : MonoBehaviour
                     rand = Random.Range(0,2);
                 }
                 else {
-                    rand = Random.Range(0, templates.rooms.Length);
+                    rand = Random.Range(0, 4);
                 }
 
 
 
-                int randRotation = Random.Range(0, templates.rooms[rand].GetComponent<RoomType>().rightDoorRotation.Length);
-                float rightRotation = templates.rooms[rand].GetComponent<RoomType>().rightDoorRotation[randRotation] + transform.parent.parent.eulerAngles.z;
-
-                GameObject tempObj = Instantiate(templates.rooms[rand], transform.position, Quaternion.Euler(0,0,rightRotation));
+                float rightRotation = templates.rightRooms[rand].transform.eulerAngles.z;
+                GameObject tempObj = Instantiate(templates.rightRooms[rand], transform.position, Quaternion.Euler(0,0,rightRotation));
                 RoomSpawner[] roomSpawnerComponents = tempObj.GetComponentsInChildren<RoomSpawner>();
 
                 foreach (RoomSpawner roomSpawnerComponent in roomSpawnerComponents) {

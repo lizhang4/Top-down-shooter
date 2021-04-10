@@ -30,7 +30,7 @@ public class E2_MoveSO : E_MoveSO
         if  (enemyMoveState.playerInCloseRange) {
             // Change state to player detected state
             enemy.SetVelocityZero();
-            if(enemy.attackSO.attackCooldown + enemy.attackSO.lastAttackTime <= Time.time) {
+            if(enemy.attackSO.attackCooldown + enemy.Attack1State.lastAttackTime <= Time.time) {
                 enemy.StateMachine.ChangeState(enemy.Attack1State);
             }
         }

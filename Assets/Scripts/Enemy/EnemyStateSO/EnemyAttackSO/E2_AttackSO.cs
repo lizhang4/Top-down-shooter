@@ -29,9 +29,9 @@ public class E2_AttackSO : E_AttackSO
 
         if(enemyAttackState.playerInCloseRange) {
             enemy.SetVelocityZero();
-            if(lastAttackTime + attackCooldown <= Time.time){
+            if(enemyAttackState.lastAttackTime + attackCooldown <= Time.time){
                 if(attackAnticipationDuration + enemyAttackState.startTime <= Time.time) {
-                    lastAttackTime = Time.time;
+                    enemyAttackState.lastAttackTime = Time.time;
 
                     Collider2D playerHit = Physics2D.OverlapCircle(enemy.attackPoint.position, enemy.enemyData.attackRadius, enemy.enemyData.whatIsPlayer);
 

@@ -10,32 +10,35 @@ public class Laser : MonoBehaviour
     public Vector2 fireDirection;
 
     public LayerMask hitLayer;
+
+    private RaycastHit2D hit2D;
+    float startTime;
     void Start()
     {
+        ShootLaser() ;
+        startTime = Time.time;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        ShootLaser() ;
+        Draw2DRay(transform.position, hit2D.point);
+        if(startTime + 1f <Time.time) {
+            Destroy(gameObject);
+        }
     }
 
     void ShootLaser() {
-        if (Physics2D.Raycast(transform.position, transform.right)) {
-            RaycastHit2D hit2D = Physics2D.Raycast(transform.position, transform.right, laserDistance, hitLayer);
-            Draw2DRay(transform.position, hit2D.point);
+            hit2D = Physics2D.Raycast(transform.position, transform.right, laserDistance, hitLayer);
+            //Draw2DRay(transform.position, hit2D.point);
 
-        }
-        else {
-            //Draw2DRay(transform.position, transform.right* laserDistance);
-
-            Debug.Log("2");
-        }
+        
         
         
 
     }
+    
 
     void Draw2DRay(Vector2 startPos, Vector2 endPos) {
         lineRenderer.SetPosition(0, startPos);

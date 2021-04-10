@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   baseDamage: 1
-  moveSpeed: 12
+  moveSpeed: 10
   hitParticle: {fileID: 0}
   critChance: 10
   whatIsDamagable:

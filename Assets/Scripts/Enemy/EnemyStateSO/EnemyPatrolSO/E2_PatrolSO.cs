@@ -26,7 +26,7 @@ public class E2_PatrolSO : E_PatrolSO
 
         if  (enemyPatrolState.playerInCloseRange) {
             // Change state to player detected state
-            if(enemy.attackSO.attackCooldown + enemy.attackSO.lastAttackTime <= Time.time) {
+            if(enemy.attackSO.attackCooldown + enemy.Attack1State.lastAttackTime <= Time.time) {
                 enemy.StateMachine.ChangeState(enemy.Attack1State);
             }
         }

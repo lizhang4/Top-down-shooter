@@ -26,8 +26,8 @@ public class E1_AttackSO : E_AttackSO
             //Debug.Log("Attack1, attacking");
             //Debug.Log("Player Position: "+ enemy.GetPlayerPosition());
             //enemy.facingDirection = enemy.GetPlayerPosition() - (Vector2)enemy.transform.position;
-            if (lastAttackTime + 1/attackRate < Time.time) {
-                lastAttackTime = Time.time;
+            if (enemyAttackState.lastAttackTime + 1/attackRate < Time.time) {
+                enemyAttackState.lastAttackTime = Time.time;
                 enemy.enemyAttack[0].AbilityLogicUpdate(enemy);
             }
 

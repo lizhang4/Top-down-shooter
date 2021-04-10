@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemyStats = GetComponent<EnemyStats>();
 
-        attackSO.InitializeLastAttackTime();
+        attackSO.InitializeLastAttackTime(this, Attack1State);
         StateMachine.Initialize(this.IdleState);
 
     }

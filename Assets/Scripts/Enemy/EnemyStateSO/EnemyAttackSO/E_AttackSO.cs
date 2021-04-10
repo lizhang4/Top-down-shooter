@@ -7,12 +7,11 @@ public class E_AttackSO : ScriptableObject
     public float attackRate = 1f;
     public float attackCooldown = 3f;
     public float attackAnticipationDuration = 0.5f;
-    public float lastAttackTime {get; protected set;}
     protected AttackDetails attackDetails;
     
     public virtual void StateExit(Enemy enemy, EnemyAttackState enemyAttackState)
     {
-
+        enemyAttackState.lastAttackTime = Time.time;
     }
 
     public virtual void StateEnter(Enemy enemy, EnemyAttackState enemyAttackState)
@@ -26,7 +25,7 @@ public class E_AttackSO : ScriptableObject
     }
 
 
-    public void InitializeLastAttackTime() {
-        lastAttackTime = -10f;
+    public void InitializeLastAttackTime(Enemy enemy, EnemyAttackState enemyAttackState) {
+        enemyAttackState.lastAttackTime = -10f;
     }
 }

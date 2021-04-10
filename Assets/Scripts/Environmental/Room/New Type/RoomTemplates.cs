@@ -7,7 +7,26 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] rooms;
 
 
+    public GameObject[] topRooms;
+    public GameObject[] rightRooms;
+    public GameObject[] bottomRooms;
+    public GameObject[] leftRooms;
+
+
+
+
     public GameObject closedRoom;
+
+    public GameObject LB, 
+    LR,
+    RB,
+    TB,
+    TL,
+    TR,
+    LRB,
+    LRT,
+    TLB,
+    TRB;
     public LayerMask whatIsRoom;
 
     public List<GameObject> addedRooms;
@@ -63,8 +82,8 @@ public class RoomTemplates : MonoBehaviour
 
             }
         }
-        if (Physics2D.OverlapCircle(connectionRoomPos[counter] + Vector3.right *10, 5f, whatIsRoom)) {
-            if(Physics2D.OverlapCircle(connectionRoomPos[counter] + Vector3.right *10, 1f, whatIsRoom) == null) {
+        if (Physics2D.OverlapCircle(connectionRoomPos[counter] + Vector3.right *15, 5f, whatIsRoom)) {
+            if(Physics2D.OverlapCircle(connectionRoomPos[counter] + Vector3.right *15, 1f, whatIsRoom) == null) {
                 sum++;
                 rotation  = rotation + 100;
                 Debug.Log("Right");
@@ -81,8 +100,8 @@ public class RoomTemplates : MonoBehaviour
             }
 
         }
-        if (Physics2D.OverlapCircle(connectionRoomPos[counter] + Vector3.left *10, 5f, whatIsRoom) ) {
-            if(Physics2D.OverlapCircle(connectionRoomPos[counter] + Vector3.left *10, 1f, whatIsRoom) == null ) {
+        if (Physics2D.OverlapCircle(connectionRoomPos[counter] + Vector3.left *15, 5f, whatIsRoom) ) {
+            if(Physics2D.OverlapCircle(connectionRoomPos[counter] + Vector3.left *15, 1f, whatIsRoom) == null ) {
                 sum++;
                 rotation  = rotation + 1;
                 Debug.Log("Left");
@@ -98,16 +117,16 @@ public class RoomTemplates : MonoBehaviour
             Debug.Log(3);
 
             if(rotation == 1110) { //TRB
-                Instantiate(rooms[3], connectionRoomPos[counter], Quaternion.Euler(0,0,-90));
+                Instantiate(TRB, connectionRoomPos[counter], TRB.transform.rotation);
             }
             else if(rotation == 1101) { //TRL
-                Instantiate(rooms[3], connectionRoomPos[counter], Quaternion.identity);
+                Instantiate(LRT, connectionRoomPos[counter], LRT.transform.rotation);
             }
             else if(rotation == 1011) { //TBL
-                Instantiate(rooms[3], connectionRoomPos[counter], Quaternion.Euler(0,0,90));
+                Instantiate(TLB, connectionRoomPos[counter], TLB.transform.rotation);
             }
             else if(rotation == 0111) { //RBL
-                Instantiate(rooms[3], connectionRoomPos[counter], Quaternion.Euler(0,0,180));
+                Instantiate(LRB, connectionRoomPos[counter], LRB.transform.rotation);
             }
         }
         else if(sum == 2) {
@@ -115,25 +134,25 @@ public class RoomTemplates : MonoBehaviour
             
 
             if(rotation == 1100) { //TR
-                Instantiate(rooms[2], connectionRoomPos[counter], Quaternion.identity);
+                Instantiate(TR, connectionRoomPos[counter], TR.transform.rotation);
             }
             else if(rotation == 1001) { //TL
-                Instantiate(rooms[2], connectionRoomPos[counter], Quaternion.Euler(0,0,90));
+                Instantiate(TL, connectionRoomPos[counter], TL.transform.rotation);
 
             }
             else if(rotation == 0110) { //RB
-                Instantiate(rooms[2], connectionRoomPos[counter], Quaternion.Euler(0,0,-90));
+                Instantiate(RB, connectionRoomPos[counter], RB.transform.rotation);
 
             }
             else if(rotation == 0011) { // BL
-                Instantiate(rooms[2], connectionRoomPos[counter], Quaternion.Euler(0,0,180));
+                Instantiate(LB, connectionRoomPos[counter], LB.transform.rotation);
 
             }
             else if(rotation == 1010) {//TB
-                Instantiate(rooms[1], connectionRoomPos[counter], Quaternion.Euler(0,0,90));
+                Instantiate(TB, connectionRoomPos[counter], TB.transform.rotation);
             }
             else if(rotation == 0101) {//RL
-                Instantiate(rooms[1], connectionRoomPos[counter], Quaternion.identity);
+                Instantiate(LR, connectionRoomPos[counter], LR.transform.rotation);
             }
         }
 

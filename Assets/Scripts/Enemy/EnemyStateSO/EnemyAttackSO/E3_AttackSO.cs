@@ -13,15 +13,17 @@ public class E3_AttackSO : E_AttackSO
     {
         base.StateEnter(enemy, enemyAttackState);
 
+
+        Debug.Log(enemy.gameObject.name);
         attackDetails.damageAmount = enemy.enemyData.baseDamage;
-        attackDirection = enemy.facingDirection;
+        enemyAttackState.attackDirection = enemy.facingDirection;
 
-        if(lastAttackTime + attackCooldown <= Time.time) {
+        if(enemyAttackState.lastAttackTime + attackCooldown <= Time.time) {
 
-            tempObj = Instantiate(enemy.enemyData.projectile, enemy.attackPoint);
-            tempObj.GetComponent<Laser>().lineRenderer.startWidth = 0.1f;
-            tempObj.GetComponent<Laser>().lineRenderer.endWidth = 0.1f;
-            tempObj.GetComponent<Laser>().fireDirection = attackDirection;
+            enemyAttackState.tempObj = Instantiate(enemy.enemyData.projectile, enemy.attackPoint);
+            enemyAttackState.tempObj.GetComponent<Laser>().lineRenderer.startWidth = 0.1f;
+            enemyAttackState.tempObj.GetComponent<Laser>().lineRenderer.endWidth = 0.1f;
+            enemyAttackState.tempObj.GetComponent<Laser>().fireDirection = attackDirection;
 
             
 
@@ -32,37 +34,40 @@ public class E3_AttackSO : E_AttackSO
     public override void StateExit(Enemy enemy, EnemyAttackState enemyAttackState)
     {
         base.StateExit(enemy, enemyAttackState);
+
+        //tempObj2.GetComponent<Laser>().hitLayer -= enemy.enemyData.whatIsPlayer;
+
     }
 
     public override void StateUpdate(Enemy enemy, EnemyAttackState enemyAttackState)
     {
         base.StateUpdate(enemy, enemyAttackState);
 
-        enemy.facingDirection = attackDirection;
-        enemy.facingAngle = Vector2.SignedAngle(Vector2.up, attackDirection);
+        enemy.facingDirection = enemyAttackState.attackDirection;
+        enemy.facingAngle = Vector2.SignedAngle(Vector2.up, enemyAttackState.attackDirection);
         enemy.transform.rotation = Quaternion.Euler(0,0,enemy.facingAngle);
-        if(lastAttackTime + attackCooldown < Time.time) {
+        if(enemyAttackState.lastAttackTime + attackCooldown < Time.time) {
             if (attackAnticipationDuration + enemyAttackState.startTime < Time.time) {
-                Destroy(tempObj);
-                lastAttackTime = Time.time;
-                RaycastHit2D playerHit = Physics2D.Raycast(enemy.attackPoint.position, attackDirection, enemy.enemyData.maxAgroRadius, enemy.enemyData.whatIsPlayer);
-                Debug.Log(attackDirection);
+                Destroy(enemyAttackState.tempObj);
+                enemyAttackState.lastAttackTime = Time.time;
+                RaycastHit2D playerHit = Physics2D.Raycast(enemy.attackPoint.position, enemyAttackState.attackDirection, enemy.enemyData.maxAgroRadius, enemy.enemyData.whatIsPlayer);
+                Debug.Log(enemyAttackState.attackDirection);
 
                 if(playerHit) {
                     playerHit.transform.SendMessage("Damage", attackDetails);
                 }
-                tempObj2 = Instantiate(enemy.enemyData.projectile, enemy.attackPoint);
-                tempObj2.GetComponent<Laser>().lineRenderer.startWidth = 0.5f;
-                tempObj2.GetComponent<Laser>().lineRenderer.endWidth = 0.5f;
-                tempObj2.GetComponent<Laser>().fireDirection = attackDirection;
-                tempObj2.GetComponent<Laser>().hitLayer += enemy.enemyData.whatIsPlayer;
+                enemyAttackState.tempObj = Instantiate(enemy.enemyData.projectile, enemy.attackPoint);
+                enemyAttackState.tempObj.GetComponent<Laser>().lineRenderer.startWidth = 0.5f;
+                enemyAttackState.tempObj.GetComponent<Laser>().lineRenderer.endWidth = 0.5f;
+                enemyAttackState.tempObj.GetComponent<Laser>().fireDirection = enemyAttackState.attackDirection;
+                enemyAttackState.tempObj.GetComponent<Laser>().hitLayer += enemy.enemyData.whatIsPlayer;
 
                 //Destroy(tempObj2);
 
             }
         }
-        else if(lastAttackTime + 0.5f < Time.time) {
-            Destroy(tempObj2);
+        else if(enemyAttackState.lastAttackTime + 0.5f < Time.time) {
+            Destroy(enemyAttackState.tempObj);
             enemy.StateMachine.ChangeState(enemy.IdleState);
         }
         

@@ -23,7 +23,8 @@ public class Projectile : MonoBehaviour
     private LayerMask 
         whatIsWall, 
         whatIsDamagable,
-        whatIsPlayer;
+        whatIsPlayer,
+        whatIsDestructible;
 
 
     private Vector2 startPos;
@@ -43,6 +44,28 @@ public class Projectile : MonoBehaviour
         hasHitWall = false;
 
     } 
+
+    private void Awake() {
+        if(whatIsWall == LayerMask.GetMask("Nothing")) {
+            whatIsWall += LayerMask.GetMask("Wall");
+
+        }
+        if(whatIsDamagable == LayerMask.GetMask("Nothing")) {
+            whatIsDamagable += LayerMask.GetMask("Damagable");
+
+
+        }
+        if(whatIsPlayer == LayerMask.GetMask("Nothing")) {
+            whatIsPlayer += LayerMask.GetMask("Player");
+
+
+        }
+        if(whatIsDestructible == LayerMask.GetMask("Nothing")) {
+            whatIsDestructible += LayerMask.GetMask("Destructible");
+
+        }
+
+    }
 
     private void Update() {
         Vector2 newPos = new Vector2(transform.position.x, transform.position.y);
@@ -71,6 +94,8 @@ public class Projectile : MonoBehaviour
             }
             Collider2D wallHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsWall);
 
+            Collider2D destructibleHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsDestructible);
+
             if(damageHit) {
                 damageHit.transform.SendMessage("Damage", attackDetails);
                 Destroy(gameObject);
@@ -80,6 +105,13 @@ public class Projectile : MonoBehaviour
                 hasHitWall = true;
                 rb.velocity = Vector2.zero;
                 hitTime = Time.time;
+            }
+
+            if(destructibleHit) {
+                hasHitWall = true;
+                rb.velocity = Vector2.zero;
+                hitTime = Time.time;
+                destructibleHit.SendMessage("Destruct");
             }
         }
 

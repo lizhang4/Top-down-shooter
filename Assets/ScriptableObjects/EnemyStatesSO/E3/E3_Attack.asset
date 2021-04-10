@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4360765fd6553b4459502c3add69bbbb, type: 3}
   m_Name: E3_Attack
   m_EditorClassIdentifier: 
-  attackRate: 1
+  attackRate: 0.3
   attackCooldown: 3
   attackAnticipationDuration: 1

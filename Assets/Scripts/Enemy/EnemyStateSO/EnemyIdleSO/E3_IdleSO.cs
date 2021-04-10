@@ -21,7 +21,7 @@ public class E3_IdleSO : E_IdleSO
 
         if  (enemyIdleState.playerInDetectedRange) {
             // Change state to player detected state
-            if(enemy.attackSO.lastAttackTime + enemy.attackSO.attackCooldown <= Time.time) {
+            if(enemy.Attack1State.lastAttackTime + enemy.attackSO.attackCooldown <= Time.time) {
 
                 enemy.StateMachine.ChangeState(enemy.Attack1State);
             }

@@ -7,6 +7,11 @@ public class EnemyAttackState : EnemyState
     protected bool hasAbilityDone;
 
     protected float minExitTime = 2f;
+    public float lastAttackTime;
+    public Vector2 attackDirection;
+    public GameObject tempObj;
+
+
     public EnemyAttackState(Enemy enemy, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(enemy, stateMachine, enemyData, animBoolName)
     {
     }

@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 6856708845691820997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -28.399063, y: 6.555208, z: -5.8775477}
-  m_LocalScale: {x: 0.4, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.25, z: 1}
   m_Children:
   - {fileID: 6856708845543929612}
   m_Father: {fileID: 0}
@@ -93,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3bc8f4b36ace55346a8503c98cd8ee5c, type: 2}
+  - {fileID: 2100000, guid: 4bcaa9341073b28478767af03baa5b80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,11 +176,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facingDirection: {x: 0, y: 0}
   playerAttack: 0
+  spin: 0
+  spinSpeed: 100
   speed: 20
   maxTravelDistance: 50
   stayOnHitDuration: 0
   damageRadius: 0.53
   damagePosition: {fileID: 6856708845543929612}
+  sprite: {fileID: 0}
   whatIsWall:
     serializedVersion: 2
     m_Bits: 2048
