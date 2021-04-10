@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Bows\FireBow.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
      <Compile Include="Assets\Scripts\Weapons\WeaponTrigger.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Objects\Boom.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyMoveSO\E1_MoveSO.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\SpawnObject.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\RangeWeapon.cs" />
@@ -82,6 +83,7 @@
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Wands\IceWand.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyPatrolState.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\EnemyData.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Objects\Trap.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\CheckRoom.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E1_AttackSO.cs" />
@@ -108,6 +110,7 @@
      <Compile Include="Assets\Scripts\Environmental\Room\SpawnRooms.cs" />
      <Compile Include="Assets\Scripts\ObjectScripts\EffectTrigger.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\LevelGeneration.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Objects\Destructible.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomGenerator.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyPatrolSO\E1_PatrolSO.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerIdleState.cs" />
@@ -122,9 +125,9 @@
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\Swords\IceSword.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E_AttackSO.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomSpawner.cs" />
-     <Compile Include="Assets\Scripts\Environmental\Objects\Destructible.cs" />
-     <Compile Include="Assets\Scripts\Environmental\Objects\Trap.cs" />
-     <Compile Include="Assets\Scripts\Environmental\Objects\Boom.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\Door.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

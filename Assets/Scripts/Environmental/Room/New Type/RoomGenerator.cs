@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class RoomGenerator : MonoBehaviour
 {
+
     private Vector2 centerPos;
 
     public GameObject chunk;
     public GameObject smallChunk; // --> 0
     public GameObject[] interiorWalls; // --> 1
     public GameObject[] chunkTemplates; // --> 2
-    public GameObject[] enemyTemplates;
-    public int maxEnemies;
-    public int minEnemies;
+    // public GameObject[] enemyTemplates;
+    // public int maxEnemies;
+    // public int minEnemies;
 
 
     public float minX;
@@ -51,12 +52,12 @@ public class RoomGenerator : MonoBehaviour
         else if(roomType == 1 || roomType == 3) {
             int rand = Random.Range(0,interiorWalls.Length);
             Instantiate(interiorWalls[rand], centerPos, Quaternion.identity);
-            Invoke("SpawnEnemies", 0.5f);
+            //Invoke("SpawnEnemies", 0.5f);
         }
         else if(roomType == 2) {
             int rand = Random.Range(0, chunkTemplates.Length) ;
             Instantiate(chunkTemplates[rand], centerPos, Quaternion.identity);
-            Invoke("SpawnEnemies", 0.5f);
+            //Invoke("SpawnEnemies", 0.5f);
             
         }
 
@@ -111,7 +112,7 @@ public class RoomGenerator : MonoBehaviour
                 Invoke("SpawnSmallBlock", 0.1f);
             }
             else {
-                SpawnEnemies();
+                //SpawnEnemies();
             }
             return;
         }
@@ -123,27 +124,27 @@ public class RoomGenerator : MonoBehaviour
         
     }
 
-    private void SpawnEnemies () {
-        int randEnemiesAmount = Random.Range(minEnemies, maxEnemies);
+    // private void SpawnEnemies () {
+    //     int randEnemiesAmount = Random.Range(minEnemies, maxEnemies);
 
-        for (int i = 0; i < randEnemiesAmount; i++) {
-            int rand = Random.Range(0, enemyTemplates.Length);
-            int randomX = (int)Random.Range(centerPos.x + minX, centerPos.x + maxX);
-            int randomY = (int)Random.Range(centerPos.y + minY, centerPos.y + maxY);
-            randomPos = new Vector2(randomX, randomY);
-            Debug.Log(randomPos);
+    //     for (int i = 0; i < randEnemiesAmount; i++) {
+    //         int rand = Random.Range(0, enemyTemplates.Length);
+    //         int randomX = (int)Random.Range(centerPos.x + minX, centerPos.x + maxX);
+    //         int randomY = (int)Random.Range(centerPos.y + minY, centerPos.y + maxY);
+    //         randomPos = new Vector2(randomX, randomY);
+    //         Debug.Log(randomPos);
        
 
-            Collider2D hit = Physics2D.OverlapCircle(randomPos, 1f, whatIsRoom);
-            if (!hit) {
-                Instantiate(enemyTemplates[rand], randomPos, Quaternion.identity);
-            }
-            else {
-                i--;
-            }
+    //         Collider2D hit = Physics2D.OverlapCircle(randomPos, 1f, whatIsRoom);
+    //         if (!hit) {
+    //             Instantiate(enemyTemplates[rand], randomPos, Quaternion.identity);
+    //         }
+    //         else {
+    //             i--;
+    //         }
 
-        }
-    }
+    //     }
+    //}
 
 
 

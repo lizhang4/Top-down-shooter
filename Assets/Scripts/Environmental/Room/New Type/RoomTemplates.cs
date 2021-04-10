@@ -161,8 +161,8 @@ public class RoomTemplates : MonoBehaviour
 
     private void OnDrawGizmos() {
         if (connectionRoomPos.Count >= 1) {
-            Gizmos.DrawWireSphere(connectionRoomPos[0]+ Vector3.left *10, 1f);
-            Gizmos.DrawWireSphere(connectionRoomPos[0]+ Vector3.right *10, 1f);
+            Gizmos.DrawWireSphere(connectionRoomPos[0]+ Vector3.left *15, 1f);
+            Gizmos.DrawWireSphere(connectionRoomPos[0]+ Vector3.right *15, 1f);
             Gizmos.DrawWireSphere(connectionRoomPos[0]+ Vector3.up *10, 1f);
             Gizmos.DrawWireSphere(connectionRoomPos[0]+ Vector3.down *10, 1f);
         }
