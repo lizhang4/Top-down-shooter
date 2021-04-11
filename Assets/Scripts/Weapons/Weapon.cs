@@ -7,40 +7,47 @@ public class Weapon : ScriptableObject
 {
     [Header("Attack Details")]
     public int attackDamage = 1;
-    public int spellDamage = 5;
+    public int attackManaCost = 0;
     public float attackRate = 1f;
     public float attackCooldown;
+    public float spread;
+    public float attackProjectileSpeed = 20f;
+    public bool allowButtonHold = true;
+    public GameObject attackProjectile;
+
+
+    [Header("Spell Details")]
+    public int spellDamage = 5;
     public float spellCooldown;
-    //public float attackRadius = 1f;
-    public LayerMask whatIsDamagable;
     
 
+    public LayerMask whatIsDamagable;
     public GameObject[] attackEffect = new GameObject[1];
     public GameObject[] spellEffect = new GameObject[1];
 
+
+
     public float lastAttackTime {get; protected set;}
     public float lastSpellTime {get; protected set;}
+
+    // Temperory variables
     protected AttackDetails attackDetails;
-
-
     protected GameObject tempObj;
-
-
+        
     public virtual void AttackEnter(Player player, PlayerAttackState playerAttackState) {
 
     }
 
     public virtual void AttackLogicUpdate(Player player, PlayerAttackState playerAttackState) {
-        
-        // GameObject tempObj =  Instantiate(attackEffect[0], playerAttack.attackPoint.position, Quaternion.Euler(0,0,playerAttack.bulletAngle));
-        // tempObj.GetComponent<Projectile>().facingDirection = playerAttack.facingDirection;
-        // tempObj.GetComponent<Projectile>().attackDetails.damageAmount = attackDamage;
 
     }
     
     public virtual void AttackExit(Player player, PlayerAttackState playerAttackState) {
         lastAttackTime = Time.time;
     }
+    
+
+
 
     public virtual void SpellEnter(Player player, PlayerSpellState playerSpellState) {
         
@@ -53,6 +60,8 @@ public class Weapon : ScriptableObject
     public virtual void SpellExit(Player player, PlayerSpellState playerSpellState) {
         lastSpellTime = Time.time;
     }
+
+
 
     public virtual void AttackAnimationTrigger(Player player, PlayerAttackState playerAttackState) {
 

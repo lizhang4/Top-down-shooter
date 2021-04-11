@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 6ceaf9f1122451343a3c73f25d022e87, type: 2}
-  weapon: {fileID: 11400000, guid: 9c2a0e630ac9aa44392b8df7c3816a0d, type: 2}
+  weapon: {fileID: 11400000, guid: a7989257c9756ba45a3fda3a4cc90bed, type: 2}
   ability: {fileID: 11400000, guid: d31574caa7f9fa145bcb8ac94985be27, type: 2}
   playerStats: {fileID: 425010036}
   facingDirection: {x: 0, y: 0}

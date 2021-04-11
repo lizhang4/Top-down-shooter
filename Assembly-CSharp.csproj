@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyPlayerDetectedState.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyAttack1State.cs" />
      <Compile Include="Assets\Scripts\Abilities\Ability.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomController.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\New Type\AddRoom.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyAttack2State.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack\EnemyMeleeAttack.cs" />
@@ -87,8 +88,10 @@
      <Compile Include="Assets\Scripts\Environmental\Room\CheckRoom.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E1_AttackSO.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\Door.cs" />
      <Compile Include="Assets\Scripts\Attacks\Skills\FireWandSpell.cs" />
      <Compile Include="Assets\Scripts\Items\Item.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\OtherScripts\AttackDetails.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomTemplates.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyIdleSO\E1_IdleSO.cs" />
@@ -125,9 +128,12 @@
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\Swords\IceSword.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E_AttackSO.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomSpawner.cs" />
-     <Compile Include="Assets\Scripts\Environmental\Room\New Type\EnemySpawner.cs" />
-     <Compile Include="Assets\Scripts\Environmental\Room\New Type\Door.cs" />
-     <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomController.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\Gun.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\Pistol.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\SMG.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\Shotgun.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\Sniper.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\RocketLauncher.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

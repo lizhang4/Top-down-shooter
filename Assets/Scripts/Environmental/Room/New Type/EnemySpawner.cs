@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemyTemplates;
+    public GameObject spawnLocator;
     public int maxEnemies;
     public int minEnemies;
 
@@ -64,8 +65,11 @@ public class EnemySpawner : MonoBehaviour
 
             Collider2D hit = Physics2D.OverlapCircle(randomPos, 1f, whatIsObstacles);
             if (!hit) {
+                GameObject tempSpawnLocator = Instantiate(spawnLocator, randomPos, Quaternion.identity);
                 GameObject tempEnemy = Instantiate(enemyTemplates[rand], randomPos, Quaternion.identity);
+                tempEnemy.SetActive(false);
                 tempEnemy.transform.SetParent(enemiesHolder.transform);
+                StartCoroutine(Spawn(rand, randomPos, tempSpawnLocator, tempEnemy));
                 //enemies.Add(tempEnemy);
                 
             }
@@ -74,5 +78,15 @@ public class EnemySpawner : MonoBehaviour
             }
 
         }
+    }
+
+    
+
+    public IEnumerator Spawn(int rand, Vector2 randomPos, GameObject tempSpawnLocator, GameObject tempEnemy) {
+
+        yield return new WaitForSeconds(1f);
+        Destroy(tempSpawnLocator);
+        tempEnemy.SetActive(true);
+        
     }
 }

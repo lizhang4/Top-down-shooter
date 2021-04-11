@@ -3851,6 +3851,7 @@ MonoBehaviour:
   enemyTemplates:
   - {fileID: 2619550686266159243, guid: fe92762755cd42541886113db0366b7b, type: 3}
   - {fileID: 5872805789213584379, guid: 843239b8599a7dd4781a6db303cfc394, type: 3}
+  spawnLocator: {fileID: 4985157969250616287, guid: 02f61a3a8dee6d54c825740cd7f8fa49, type: 3}
   maxEnemies: 0
   minEnemies: 0
   minX: 0
@@ -3862,7 +3863,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   enemyCounter: 0
-  enemies: []
+  enemiesHolder: {fileID: 0}
 --- !u!1 &8655617670954181746
 GameObject:
   m_ObjectHideFlags: 0
