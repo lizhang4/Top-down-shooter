@@ -10,6 +10,7 @@ public class Gun : Weapon
 
         if(playerAttackState.attackInput) {
             if(lastAttackTime + (1/attackRate) <= Time.time) {
+                PlaySound();
                 lastAttackTime = Time.time;
                 SpawnProjectile(player, playerAttackState);
             }
@@ -17,6 +18,10 @@ public class Gun : Weapon
         else {
             player.StateMachine.ChangeState(player.IdleState);
         }
+    }
+
+    public virtual void PlaySound() {
+
     }
 
     public virtual void SpawnProjectile(Player player, PlayerAttackState playerAttackState) {

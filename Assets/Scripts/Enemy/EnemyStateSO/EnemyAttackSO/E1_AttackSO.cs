@@ -32,14 +32,14 @@ public class E1_AttackSO : E_AttackSO
             }
 
             // Movement
-            if(!enemyAttackState.playerInMidRange) {
-                Debug.Log("Follow");
-                enemy.SetVelocity(enemy.facingDirection, enemy.enemyData.moveSpeed/2);
-            }
-            else if(enemyAttackState.PlayerInRetreatRange) {
-                Debug.Log("Retreat");
-                enemy.SetVelocity(enemy.facingDirection, -enemy.enemyData.moveSpeed/2);
-            }
+            // if(!enemyAttackState.playerInMidRange) {
+            //     Debug.Log("Follow");
+            //     enemy.SetVelocity(enemy.facingDirection, enemy.enemyData.moveSpeed/2);
+            // }
+            // else if(enemyAttackState.PlayerInRetreatRange) {
+            //     Debug.Log("Retreat");
+            //     enemy.SetVelocity(enemy.facingDirection, -enemy.enemyData.moveSpeed/2);
+            // }
 
         }
 

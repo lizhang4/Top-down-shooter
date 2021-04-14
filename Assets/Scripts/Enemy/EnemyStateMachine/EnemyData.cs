@@ -22,6 +22,7 @@ public class EnemyData : ScriptableObject
     public float playerDetectedRadius = 5f;
     public float maxAgroRadius = 8f;
     public float closeRangeActionRadius = 2f;
+    public float rangeAttackRadius = 5f;
     public float midRangeActionRadius = 5f;
     public float retreatRangeRadius = 3f;
 

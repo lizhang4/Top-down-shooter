@@ -50,8 +50,9 @@ public class E3_AttackSO : E_AttackSO
             if (attackAnticipationDuration + enemyAttackState.startTime < Time.time) {
                 Destroy(enemyAttackState.tempObj);
                 enemyAttackState.lastAttackTime = Time.time;
-                RaycastHit2D playerHit = Physics2D.Raycast(enemy.attackPoint.position, enemyAttackState.attackDirection, enemy.enemyData.maxAgroRadius, enemy.enemyData.whatIsPlayer);
-                Debug.Log(enemyAttackState.attackDirection);
+                //RaycastHit2D playerHit = Physics2D.Raycast(enemy.attackPoint.position, enemyAttackState.attackDirection, enemy.enemyData.maxAgroRadius, enemy.enemyData.whatIsPlayer);
+                RaycastHit2D playerHit = Physics2D.CircleCast(enemy.attackPoint.position, 0.5f, enemyAttackState.attackDirection, enemy.enemyData.maxAgroRadius, enemy.enemyData.whatIsPlayer);
+                //Debug.Log(enemyAttackState.attackDirection);
 
                 if(playerHit) {
                     playerHit.transform.SendMessage("Damage", attackDetails);

@@ -13,15 +13,18 @@ MonoBehaviour:
   m_Name: TestEnemy 1
   m_EditorClassIdentifier: 
   maxHealth: 10
-  baseDamage: 1
-  moveSpeed: 10
+  baseDamage: 2
+  moveSpeed: 5
+  projectile: {fileID: 0}
   moveWhileAttack: 0
   hitParticle: {fileID: 0}
-  playerDetectedRadius: 7
-  maxAgroRadius: 15
+  playerDetectedRadius: 9
+  maxAgroRadius: 20
   closeRangeActionRadius: 0
-  midRangeActionRadius: 4
-  retreatRangeRadius: 3
+  rangeAttackRadius: 6
+  midRangeActionRadius: 0
+  retreatRangeRadius: 0
+  attackRadius: 0
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 256

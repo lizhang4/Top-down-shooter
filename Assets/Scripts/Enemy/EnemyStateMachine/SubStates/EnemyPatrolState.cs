@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyPatrolState : EnemyState
 {
+    public float lastPathCheckUpdateTime = -10f;
+    public Vector3 initialPosition;
+    public Vector2 randomPos;
     public EnemyPatrolState(Enemy enemy, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(enemy, stateMachine, enemyData, animBoolName)
     {
     }

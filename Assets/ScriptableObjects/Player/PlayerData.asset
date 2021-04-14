@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a3be4ee6dec95f4dbfc51ddedc88bfa, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
+  maxShield: 3
   baseDamage: 1
   moveSpeed: 10
+  shieldRecoveryTimeAfterDamage: 5
+  shieldRecoveryTime: 1
   hitParticle: {fileID: 0}
   critChance: 10
   whatIsDamagable:

@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     public Vector2 facingDirection;
     public float facingAngle;
     public EnemyStats enemyStats;
+    public EnemyAI enemyAI;
     public EnemyAbility[] enemyAttack = new EnemyAbility[2];
     private Rigidbody2D rb;
 
@@ -58,6 +59,7 @@ public class Enemy : MonoBehaviour
         //currentHealth = enemyData.maxHealth;
 
         rb = GetComponent<Rigidbody2D>();
+        enemyAI = GetComponent<EnemyAI>();
         enemyStats = GetComponent<EnemyStats>();
 
         attackSO.InitializeLastAttackTime(this, Attack1State);
@@ -128,6 +130,11 @@ public class Enemy : MonoBehaviour
         return Physics2D.OverlapCircle(transform.position, enemyData.retreatRangeRadius, enemyData.whatIsPlayer);
     }
 
+    public virtual bool CheckPlayerInRangeAttackRange() {
+        return Physics2D.OverlapCircle(transform.position, enemyData.rangeAttackRadius, enemyData.whatIsPlayer);
+
+    }
+
     #endregion
 
     #region GetFunctions 
@@ -174,6 +181,8 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, enemyData.playerDetectedRadius);
         Gizmos.DrawWireSphere(transform.position, enemyData.midRangeActionRadius);
+        Gizmos.DrawWireSphere(transform.position, enemyData.rangeAttackRadius);
+
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, enemyData.retreatRangeRadius);

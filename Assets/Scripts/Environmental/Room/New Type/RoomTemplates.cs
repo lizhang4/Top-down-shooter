@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Pathfinding;
 public class RoomTemplates : MonoBehaviour
 {
     public GameObject[] rooms;
@@ -12,10 +12,13 @@ public class RoomTemplates : MonoBehaviour
     public GameObject[] bottomRooms;
     public GameObject[] leftRooms;
 
+    
+
 
 
 
     public GameObject closedRoom;
+    public bool hasScanned;
 
     public GameObject LB, 
     LR,
@@ -64,6 +67,15 @@ public class RoomTemplates : MonoBehaviour
 
         if(stopGeneration && counter < connectionRoomPos.Count) {
             AddConnectingRoom();
+            
+        }
+
+        if (stopGeneration && counter == connectionRoomPos.Count && !hasScanned) {
+            if (counter == connectionRoomPos.Count) {
+                Debug.Log("Scaned");
+                AstarPath.active.Scan();
+                hasScanned = true;
+            }
         }
 
         

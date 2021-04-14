@@ -22,20 +22,36 @@ public class E1_MoveSO : E_MoveSO
     {
         base.StateUpdate(enemy, enemyMoveState);
 
-        if  (enemyMoveState.playerInDetectedRange) {
+        if  (enemyMoveState.playerInDetectedRange && enemyMoveState.playerInRangeAttackRange) {
             // Change state to player detected state
+            //enemy.enemyAI.stopMoving = true;
+            enemy.SetVelocityZero();
+
+
             enemy.StateMachine.ChangeState(enemy.Attack1State);
         }
         else if(!enemyMoveState.playerInDetectedRange && !enemyMoveState.playerInMaxAgroRange) {
             // Change state to idle state state
+            //enemy.enemyAI.stopMoving = true;
+            enemy.SetVelocityZero();
+
+
             enemy.StateMachine.ChangeState(enemy.PatrolState);
         }
-        else if(!enemyMoveState.playerInDetectedRange && enemyMoveState.playerInMaxAgroRange) {
-            // Remain at move state
-            //Debug.Log("MoveState");
-            // Debug.Log("Player Position: "+ enemy.GetPlayerPosition());
-            enemy.SetVelocity(enemy.facingDirection, enemy.enemyData.moveSpeed);
-            //enemy.MoveToPlayer();
+        else if(enemyMoveState.playerInMaxAgroRange) {
+            enemy.enemyAI.stopMoving = false;
+
+            if (enemyMoveState.lastPathCheckUpdateTime + timeBtwUpdate <= Time.time) {
+                enemyMoveState.lastPathCheckUpdateTime = Time.time;
+
+                enemy.enemyAI.UpdatePath(enemy.GetPlayerPosition());
+                
+            }
+            enemy.enemyAI.MoveToward(enemy.enemyData.moveSpeed);
         }
+        else {
+            enemy.SetVelocityZero();
+        }
+
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMoveState : EnemyState
 {
     private Vector2 moveDirection;
+    public float lastPathCheckUpdateTime = -10f;
     public EnemyMoveState(Enemy enemy, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(enemy, stateMachine, enemyData, animBoolName)
     {
     }

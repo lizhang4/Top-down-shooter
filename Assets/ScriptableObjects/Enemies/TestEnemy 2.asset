@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestEnemy 2
   m_EditorClassIdentifier: 
   maxHealth: 10
-  baseDamage: 1
+  baseDamage: 3
   moveSpeed: 10
   projectile: {fileID: 1457835707453006888, guid: 703a7d12fee9e094bb428301a79cbc8e, type: 3}
   moveWhileAttack: 0
@@ -21,8 +21,10 @@ MonoBehaviour:
   playerDetectedRadius: 7
   maxAgroRadius: 10
   closeRangeActionRadius: 0
+  rangeAttackRadius: 5
   midRangeActionRadius: 0
   retreatRangeRadius: 0
+  attackRadius: 2
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 256

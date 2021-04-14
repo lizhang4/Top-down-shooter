@@ -8,9 +8,11 @@ public class EntityStats : MonoBehaviour
     // protected GameObject
     //     deathChunkParticle,
     //     deathBloodParticle;
+    
 
     [SerializeField]
     public int currentHealth;
+    public int currentShield;
     public bool immuneDamage = false;
     public bool GetDamageTaken = false;
     public bool getHit = false;

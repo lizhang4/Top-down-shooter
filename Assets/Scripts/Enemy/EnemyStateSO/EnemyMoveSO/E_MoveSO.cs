@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class E_MoveSO : ScriptableObject
 {
+    public float timeBtwUpdate = 0.5f;
     public virtual void StateExit(Enemy enemy, EnemyMoveState enemyMoveState)
     {
 
