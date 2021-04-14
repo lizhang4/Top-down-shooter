@@ -9,6 +9,8 @@ public class EnemyAbility : ScriptableObject
     public int attackModifier = 1;
     public float attackRate = 1f;
     public float attackRadius = 0.5f;
+
+    
     
     
 
