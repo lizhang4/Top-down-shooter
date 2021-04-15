@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerSpellState : PlayerState
 {
+    public float lastSpellTime;
     public PlayerSpellState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -54,7 +55,7 @@ public class PlayerSpellState : PlayerState
         else {
             player.SetVelocityZero();
         }
-        if(attackInput && (1/player.weapon.attackRate + player.weapon.lastAttackTime < Time.time)) {
+        if(attackInput && (1/player.weapon.attackRate + player.AttackState.lastAttackTime < Time.time)) {
             player.StateMachine.ChangeState(player.AttackState);
         }
 

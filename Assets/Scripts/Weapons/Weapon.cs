@@ -10,7 +10,8 @@ public class Weapon : ScriptableObject
     public int attackManaCost = 0;
     public float attackRate = 1f;
     public float attackCooldown;
-    public float spread;
+    public float firingSpread;
+    public float bulletSpread;
     public float attackProjectileSpeed = 20f;
     public bool allowButtonHold = true;
     public GameObject attackProjectile;
@@ -43,7 +44,7 @@ public class Weapon : ScriptableObject
     }
     
     public virtual void AttackExit(Player player, PlayerAttackState playerAttackState) {
-        lastAttackTime = Time.time;
+        playerAttackState.lastAttackTime = Time.time;
     }
     
 
@@ -58,7 +59,7 @@ public class Weapon : ScriptableObject
     }
 
     public virtual void SpellExit(Player player, PlayerSpellState playerSpellState) {
-        lastSpellTime = Time.time;
+        playerSpellState.lastSpellTime= Time.time;
     }
 
 
@@ -81,9 +82,9 @@ public class Weapon : ScriptableObject
 
     }
 
-    public void InitialiseWeapon() {
-        lastAttackTime = -10f;
-        lastSpellTime = -10f;
+    public void InitialiseWeapon(PlayerAttackState playerAttackState) {
+        playerAttackState.lastAttackTime = -10f;
+        playerAttackState.lastAttackTime = -10f;
     }
 
     public void SetLastSpellTime(float time) {

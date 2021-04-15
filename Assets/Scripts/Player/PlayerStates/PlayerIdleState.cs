@@ -13,7 +13,7 @@ public class PlayerIdleState : PlayerState
         base.LogicUpdate();
 
         if(attackInput ) {
-            if(((1/player.weapon.attackRate) + player.weapon.lastAttackTime < Time.time)){
+            if(((1/player.weapon.attackRate) + player.AttackState.lastAttackTime < Time.time)){
 
                 player.StateMachine.ChangeState(player.AttackState);
             }
@@ -21,7 +21,7 @@ public class PlayerIdleState : PlayerState
         if(abilityInput && player.ability.abilityCooldown + player.ability.lastAbilityTime <= Time.time){
             player.StateMachine.ChangeState(player.AbilityState);
         }
-        if(spellInput && player.weapon.lastSpellTime + player.weapon.spellCooldown <= Time.time) {
+        if(spellInput && player.SpellState.lastSpellTime + player.weapon.spellCooldown <= Time.time) {
             Debug.Log(player.weapon.lastSpellTime);
             player.StateMachine.ChangeState(player.SpellState);
         }

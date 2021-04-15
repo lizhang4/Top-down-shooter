@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Boom : Destructible
 {
-    public GameObject explosion;
+    public GameObject explosionGO;
+    public int damage;
     public override void Destruct()
     {
-        Debug.Log("Explode!");
-        // Instantiate boom effect
+        GameObject tempObj = Instantiate(explosionGO, transform.position, Quaternion.identity);
+        tempObj.GetComponent<Explosion>().attackDetails.damageAmount = damage;
         base.Destruct();
 
     }

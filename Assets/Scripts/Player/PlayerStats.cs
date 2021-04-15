@@ -12,6 +12,8 @@ public class PlayerStats : EntityStats
     private float lastDamageTime = 0;
     private float lastShieldRecoverTime = 0;
 
+
+
     protected override void Start() {
         //base.Start();
         currentHealth = playerData.maxHealth;

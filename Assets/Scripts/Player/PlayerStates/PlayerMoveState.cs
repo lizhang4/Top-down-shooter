@@ -33,14 +33,14 @@ public class PlayerMoveState : PlayerState
     {
         base.LogicUpdate();
 
-        if(attackInput && (1/player.weapon.attackRate + player.weapon.lastAttackTime < Time.time)) {
+        if(attackInput && (1/player.weapon.attackRate + player.AttackState.lastAttackTime < Time.time)) {
             player.StateMachine.ChangeState(player.AttackState);
         }
         if(abilityInput && player.ability.abilityCooldown + player.ability.lastAbilityTime <= Time.time){
 
             player.StateMachine.ChangeState(player.AbilityState);
         }
-        else if(spellInput && player.weapon.lastSpellTime + player.weapon.spellCooldown <= Time.time) {
+        else if(spellInput && player.SpellState.lastSpellTime + player.weapon.spellCooldown <= Time.time) {
             player.StateMachine.ChangeState(player.SpellState);
         }
         if(movementInput != Vector2.zero){

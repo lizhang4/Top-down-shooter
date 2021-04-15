@@ -6,7 +6,6 @@ public class E_PatrolSO : ScriptableObject
 {
     public float timeBtwUpdate = 2f;
     public float patrolRadius = 5f;
-    
     public virtual void StateExit(Enemy enemy, EnemyPatrolState enemyPatrolState)
     {
 

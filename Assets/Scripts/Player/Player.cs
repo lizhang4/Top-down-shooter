@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
         
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerStats = GetComponent<PlayerStats>();
-        weapon.InitialiseWeapon();
+        weapon.InitialiseWeapon(AttackState);
         ability.InitializeAbility();
         StateMachine.Initialize(this.IdleState);
     }
@@ -110,9 +110,9 @@ public class Player : MonoBehaviour
         //     anim.SetBool("Run", false);
         // }
         
-        // if(Input.GetKeyDown(KeyCode.F)) {
-        //     PickItem();
-        // }
+        if(Input.GetKeyDown(KeyCode.F)) {
+            PickItem();
+        }
 
 
     }
@@ -218,13 +218,15 @@ public class Player : MonoBehaviour
         if (item != null) {
             Debug.Log(item.name);
             //Weapon itemComponentWeapon = item.transform.GetComponent<Item>().weapon;
-            if (playerAttack.weapons[1] != null) {
-                Weapon tempWeapon = playerAttack.weapons[1];
-                playerAttack.weapons[1] = item.GetComponent<Item>().weapon;
+
+            weapon.InitialiseWeapon(AttackState);
+            if (weapon != null) {
+                Weapon tempWeapon = weapon;
+                weapon = item.GetComponent<Item>().weapon;
                 item.GetComponent<Item>().weapon = tempWeapon;
             }
             else {
-                playerAttack.weapons[1] = item.GetComponent<Item>().weapon;
+                weapon = item.GetComponent<Item>().weapon;
                 Destroy(item.gameObject);
             }
 
