@@ -9,6 +9,9 @@ public class EnemyData : ScriptableObject
     public int maxHealth = 10;
     public int baseDamage = 1;
     public float moveSpeed = 5f;
+    public GameObject projectile;
+    public bool moveWhileAttack;
+    
     
 
 
@@ -19,9 +22,14 @@ public class EnemyData : ScriptableObject
     public float playerDetectedRadius = 5f;
     public float maxAgroRadius = 8f;
     public float closeRangeActionRadius = 2f;
+    public float rangeAttackRadius = 5f;
+    public float midRangeActionRadius = 5f;
+    public float retreatRangeRadius = 3f;
 
 
     [Header("Attacks")]
+    public float attackRadius = 2f;
+
 
     [Header("Layer Masks")]
     public LayerMask whatIsPlayer;

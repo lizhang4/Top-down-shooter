@@ -5,12 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
 {
+    [Header("Details")]
     public AttackDetails attackDetails;
     public Vector2 facingDirection;
     public bool playerAttack;
+
+    [Header("Projectile Stats")]
+    public float speed;
+    public bool penetratable;
+    public bool explosible;
     public bool spin;
     public float spinSpeed = 100f;
-    public float speed;
     public float maxTravelDistance;
     public float stayOnHitDuration;
 
@@ -18,12 +23,14 @@ public class Projectile : MonoBehaviour
     public float damageRadius;
     public Transform damagePosition;
     public Transform sprite;
+    public GameObject explosionGO;
 
     [SerializeField]
     private LayerMask 
         whatIsWall, 
         whatIsDamagable,
-        whatIsPlayer;
+        whatIsPlayer,
+        whatIsDestructible;
 
 
     private Vector2 startPos;
@@ -44,10 +51,38 @@ public class Projectile : MonoBehaviour
 
     } 
 
+    private void Awake() {
+        if(whatIsWall == LayerMask.GetMask("Nothing")) {
+            whatIsWall += LayerMask.GetMask("Wall");
+
+        }
+        if(whatIsDamagable == LayerMask.GetMask("Nothing")) {
+            whatIsDamagable += LayerMask.GetMask("Damagable");
+
+
+        }
+        if(whatIsPlayer == LayerMask.GetMask("Nothing")) {
+            whatIsPlayer += LayerMask.GetMask("Player");
+
+
+        }
+        if(whatIsDestructible == LayerMask.GetMask("Nothing")) {
+            whatIsDestructible += LayerMask.GetMask("Destructible");
+
+        }
+
+    }
+
     private void Update() {
         Vector2 newPos = new Vector2(transform.position.x, transform.position.y);
         // Destroy if out of max distance
         if(Mathf.Abs(Vector2.Distance(startPos, newPos)) >= maxTravelDistance ) {
+            if (explosible) {
+                GameObject tempObj = Instantiate(explosionGO, transform.position, Quaternion.identity);
+                tempObj.GetComponent<Explosion>().attackDetails = attackDetails;
+                tempObj.GetComponent<Explosion>().playerAttack = true;
+
+            }
             Destroy(gameObject);
             //TODO: Use obj pooling
         }
@@ -55,6 +90,12 @@ public class Projectile : MonoBehaviour
 
         // Destroy if hit wall while exceed stay duration
         if(hasHitWall && Time.time > hitTime + stayOnHitDuration){
+            if (explosible) {
+                GameObject tempObj = Instantiate(explosionGO, transform.position, Quaternion.identity);
+                tempObj.GetComponent<Explosion>().attackDetails = attackDetails;
+                tempObj.GetComponent<Explosion>().playerAttack = true;
+
+            }
             Destroy(gameObject);
             //TODO: Use obj pooling
         }
@@ -71,15 +112,43 @@ public class Projectile : MonoBehaviour
             }
             Collider2D wallHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsWall);
 
+            Collider2D destructibleHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsDestructible);
+            
             if(damageHit) {
-                damageHit.transform.SendMessage("Damage", attackDetails);
-                Destroy(gameObject);
+                if (explosible) {
+                    GameObject tempObj = Instantiate(explosionGO, transform.position, Quaternion.identity);
+                    tempObj.GetComponent<Explosion>().attackDetails = attackDetails;
+                    tempObj.GetComponent<Explosion>().playerAttack = true;
+
+                    Destroy(gameObject);
+                }
+                else {
+                    damageHit.transform.SendMessage("Damage", attackDetails);
+                    if (!penetratable) {
+                        Destroy(gameObject);
+                    }
+                }
             }
 
             if(wallHit) {
                 hasHitWall = true;
                 rb.velocity = Vector2.zero;
                 hitTime = Time.time;
+            }
+
+            if(destructibleHit) {
+                //hasHitWall = true;
+                //rb.velocity = Vector2.zero;
+                //hitTime = Time.time;
+                if (!penetratable) {
+                    if (explosible) {
+                        GameObject tempObj = Instantiate(explosionGO, transform.position, Quaternion.identity);
+                        tempObj.GetComponent<Explosion>().attackDetails = attackDetails;
+                        tempObj.GetComponent<Explosion>().playerAttack = true;
+                    }
+                    Destroy(gameObject);
+                }
+                destructibleHit.SendMessage("Destruct");
             }
         }
 

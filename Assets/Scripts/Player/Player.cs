@@ -24,10 +24,11 @@ public class Player : MonoBehaviour
     public float facingAngle;
     public Vector3 worldPosition;
 
+    //public reference
+    public Animator anim;
     // Private data
     private Rigidbody2D rb;
     private Collider2D col;
-    private Animator anim;
     private SpriteRenderer spriteRenderer;
 
 
@@ -50,10 +51,10 @@ public class Player : MonoBehaviour
         facingDirection = new Vector2(0,1);
 
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerStats = GetComponent<PlayerStats>();
-        weapon.InitialiseWeapon();
+        weapon.InitialiseWeapon(AttackState);
         ability.InitializeAbility();
         StateMachine.Initialize(this.IdleState);
     }
@@ -77,12 +78,13 @@ public class Player : MonoBehaviour
         facingAngle = Vector2.SignedAngle(Vector2.up, facingDirection);
         rotatePoint.transform.rotation = Quaternion.Euler(0,0,facingAngle);
 
-        // if(rb.velocity.x > 0.01 ) {
-        //    spriteRenderer.flipX = false;
-        // }
-        // else if(rb.velocity.x < -0.01){
-        //     spriteRenderer.flipX = true;
-        // }
+        if(Mathf.Abs(rb.velocity.x ) > 0.01 || Mathf.Abs(rb.velocity.y ) > 0.01) {
+           anim.SetBool("Run", true);
+        }
+        else {
+           anim.SetBool("Run", false);
+            
+        }
 
 
         StateMachine.currentState.LogicUpdate();
@@ -108,9 +110,9 @@ public class Player : MonoBehaviour
         //     anim.SetBool("Run", false);
         // }
         
-        // if(Input.GetKeyDown(KeyCode.F)) {
-        //     PickItem();
-        // }
+        if(Input.GetKeyDown(KeyCode.F)) {
+            PickItem();
+        }
 
 
     }
@@ -216,13 +218,15 @@ public class Player : MonoBehaviour
         if (item != null) {
             Debug.Log(item.name);
             //Weapon itemComponentWeapon = item.transform.GetComponent<Item>().weapon;
-            if (playerAttack.weapons[1] != null) {
-                Weapon tempWeapon = playerAttack.weapons[1];
-                playerAttack.weapons[1] = item.GetComponent<Item>().weapon;
+
+            weapon.InitialiseWeapon(AttackState);
+            if (weapon != null) {
+                Weapon tempWeapon = weapon;
+                weapon = item.GetComponent<Item>().weapon;
                 item.GetComponent<Item>().weapon = tempWeapon;
             }
             else {
-                playerAttack.weapons[1] = item.GetComponent<Item>().weapon;
+                weapon = item.GetComponent<Item>().weapon;
                 Destroy(item.gameObject);
             }
 

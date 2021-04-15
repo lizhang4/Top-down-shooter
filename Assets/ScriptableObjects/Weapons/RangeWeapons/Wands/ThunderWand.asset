@@ -25,7 +25,7 @@ MonoBehaviour:
   spellEffect:
   - {fileID: 2077451374766598476, guid: 742cecc017e71de458f4704e513d6c0d, type: 3}
   projectileSpeed: 25
-  projectile: {fileID: 1320809660060716114, guid: be31eaf58ad2c494fa8f4bbe2cd89000, type: 3}
+  projectile: {fileID: 6856708845691820997, guid: a7a976540271aa04f83330645b43dab2, type: 3}
   spellRadius: 5
   offsetDistance: 3
   teleportMaxDistance: 5

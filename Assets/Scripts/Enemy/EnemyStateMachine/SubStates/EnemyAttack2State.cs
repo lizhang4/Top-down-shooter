@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyAttack2State : EnemyAttackState
 {
-    private float lastAttackTime;
     public EnemyAttack2State(Enemy enemy, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(enemy, stateMachine, enemyData, animBoolName)
     {
     }

@@ -36,56 +36,96 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ObjectScripts\Laser.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\RocketLauncher.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\RoomType.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\Swords\FireSword.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyStateSO.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyIdleSO\E_IdleSO.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyLookingForPlayerState.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyPatrolSO\E_PatrolSO.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\SMG.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerAbilityState.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack\EnemyAbility.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyMoveSO\E_MoveSO.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\Sniper.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E2_AttackSO.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\Swords\NormalSword.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Wands\NormalWand.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerMoveState.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Attacks\Skill.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyPlayerDetectedState.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyAttack1State.cs" />
      <Compile Include="Assets\Scripts\Abilities\Ability.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomController.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\AddRoom.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyAttack2State.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\Shotgun.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack\EnemyMeleeAttack.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyIdleSO\E3_IdleSO.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Bows\NormalBow.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Bows\FireBow.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
      <Compile Include="Assets\Scripts\Weapons\WeaponTrigger.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Objects\Boom.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyMoveSO\E1_MoveSO.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\SpawnObject.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\RangeWeapon.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\EnemyState.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyMoveState.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\Enemy.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
-     <Compile Include="Assets\Scripts\Attacks\Attack.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Attacks\Attack.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyPatrolSO\E2_PatrolSO.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Bows\IceBow.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\Pistol.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Guns\Gun.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Wands\ThunderWand.cs" />
+     <Compile Include="Assets\Scripts\ObjectScripts\Sound.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomDestroyer.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\MeleeWeapon.cs" />
-     <Compile Include="Assets\Scripts\UI\PlayerHealthUI.cs" />
+     <Compile Include="Assets\Scripts\UI\PlayerStatsUI.cs" />
      <Compile Include="Assets\Scripts\Entity\EntityStats.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Wands\FireWand.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Wands\IceWand.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyPatrolState.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\EnemyData.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Objects\Trap.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\CheckRoom.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E1_AttackSO.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\Door.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Attacks\Skills\FireWandSpell.cs" />
      <Compile Include="Assets\Scripts\Items\Item.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\OtherScripts\AttackDetails.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomTemplates.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyIdleSO\E1_IdleSO.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack\EnemyRangeAttack.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyMoveSO\E2_MoveSO.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\Swords\ThunderSword.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Attacks\SkillSO.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
      <Compile Include="Assets\Scripts\ObjectScripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerSpellState.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Attacks\Skills\IceWandSpell.cs" />
      <Compile Include="Assets\Scripts\Abilities\DashAbility.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\SubStates\EnemyIdleState.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\EnemyStateMachine.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Attacks\Skills\FireBall01.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\SpawnRooms.cs" />
      <Compile Include="Assets\Scripts\ObjectScripts\EffectTrigger.cs" />
      <Compile Include="Assets\Scripts\Environmental\Room\LevelGeneration.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Objects\Destructible.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomGenerator.cs" />
+     <Compile Include="Assets\Scripts\Manager\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyPatrolSO\E1_PatrolSO.cs" />
+     <Compile Include="Assets\Testing.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerIdleState.cs" />
      <Compile Include="Assets\Scripts\ObjectScripts\EffectController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerData.cs" />
@@ -93,13 +133,13 @@
      <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerAttackState.cs" />
      <Compile Include="Assets\Scripts\Weapons\RangeWeapons\Bows\ThunderBow.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E3_AttackSO.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack\EnemyAttackTrigger.cs" />
      <Compile Include="Assets\Scripts\Weapons\MeleeWeapons\Swords\IceSword.cs" />
-     <Compile Include="Assets\Scripts\Attacks\Skill.cs" />
-     <Compile Include="Assets\Scripts\Attacks\SkillSO.cs" />
-     <Compile Include="Assets\Scripts\Attacks\Skills\FireWandSpell.cs" />
-     <Compile Include="Assets\Scripts\Attacks\Skills\FireBall01.cs" />
-     <Compile Include="Assets\Scripts\Attacks\Skills\IceWandSpell.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStateSO\EnemyAttackSO\E_AttackSO.cs" />
+     <Compile Include="Assets\AI.cs" />
+     <Compile Include="Assets\Scripts\Environmental\Room\New Type\RoomSpawner.cs" />
+     <Compile Include="Assets\Scripts\ObjectScripts\Explosion.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -288,6 +328,9 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.2f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+        <HintPath>D:/UnityProjects/Top down shooter/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.2f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -640,23 +683,11 @@
     <Reference Include="Cinemachine">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Animation.Runtime">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -664,41 +695,8 @@
     <Reference Include="Unity.Timeline">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="PsdPlugin">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEngineBridge.001">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
@@ -706,23 +704,29 @@
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/UnityProjects/Top down shooter/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{2c692574-4fbf-d8b4-d06f-c3337356e87a}</Project>
+      <Name>AstarPathfindingProject</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{eb4e9561-0bff-e03a-fc3c-fb9907d674fc}</Project>
+      <Name>PackageToolsEditor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{9208ed0c-f20d-3850-a61f-27a2a8f1f311}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

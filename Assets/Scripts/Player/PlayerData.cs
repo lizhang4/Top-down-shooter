@@ -6,9 +6,14 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [Header("Stats Data")]
-    public int maxHealth = 10;
+    public int maxHealth = 5;
+    public int maxShield = 5;
     public int baseDamage = 1;
     public float moveSpeed = 15f;
+
+
+    public float shieldRecoveryTimeAfterDamage = 2f;
+    public float shieldRecoveryTime = 1f;
     
 
 

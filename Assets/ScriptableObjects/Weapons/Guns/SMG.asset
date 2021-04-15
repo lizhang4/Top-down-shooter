@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364cf761e148b5b43b51e1c432f3ffe0, type: 3}
+  m_Name: SMG
+  m_EditorClassIdentifier: 
+  attackDamage: 1
+  attackManaCost: 0
+  attackRate: 7
+  attackCooldown: 0
+  spread: 0
+  attackProjectileSpeed: 50
+  allowButtonHold: 1
+  attackProjectile: {fileID: 6856708845691820997, guid: a7a976540271aa04f83330645b43dab2, type: 3}
+  spellDamage: 5
+  spellCooldown: 0
+  whatIsDamagable:
+    serializedVersion: 2
+    m_Bits: 512
+  attackEffect:
+  - {fileID: 0}
+  spellEffect:
+  - {fileID: 0}

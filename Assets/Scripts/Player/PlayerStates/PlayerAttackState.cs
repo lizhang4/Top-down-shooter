@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttackState : PlayerState
 {
-    public float lastAttackTime {get; private set;}
+    public float lastAttackTime = -10f;
     public PlayerAttackState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -51,6 +51,9 @@ public class PlayerAttackState : PlayerState
 
         if(movementInput != Vector2.zero){
             player.SetVelocity(movementInput, playerData.moveSpeed);
+        }
+        else {
+            player.SetVelocityZero();
         }
 
         if(abilityInput && player.ability.abilityCooldown + player.ability.lastAbilityTime <= Time.time){

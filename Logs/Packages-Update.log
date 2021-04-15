@@ -46,3 +46,33 @@ The following packages were added:
   com.unity.ugui@1.0.0
 The following packages were updated:
   com.unity.2d.spriteshape from version 4.1.1 to 4.1.2
+
+=== Wed Apr 14 22:06:25 2021
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.ads@2.0.8
+  com.unity.analytics@3.3.2
+  com.unity.package-manager-ui@2.1.2
+  com.unity.purchasing@2.0.6
+  com.unity.render-pipelines.high-definition@5.13.0-preview
+
+=== Thu Apr 15 16:33:44 2021
+
+Packages were changed.
+Update Mode: resetToDefaultDependencies
+
+The following packages were removed:
+  com.unity.2d.animation@4.2.4
+  com.unity.2d.pixel-perfect@3.0.2
+  com.unity.2d.psdimporter@3.1.4
+  com.unity.2d.sprite@1.0.0
+  com.unity.2d.spriteshape@4.1.2
+  com.unity.2d.tilemap@1.0.0
+  com.unity.analytics@3.3.2
+  com.unity.cinemachine@2.6.4
+  com.unity.package-manager-ui@2.1.2
+  com.unity.purchasing@2.0.6
+  com.unity.vectorgraphics@2.0.0-preview.14

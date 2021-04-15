@@ -14,6 +14,7 @@ public class DashAbility : Ability
     {
         base.AbilityEnter(player, playerAbilityState);
         dashDir = playerAbilityState.movementInput;
+        player.StartCoroutine(player.ImmuneDamageOn(0.5f));
         
     }
 
